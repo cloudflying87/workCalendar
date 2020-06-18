@@ -19,6 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -29,10 +30,109 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
-    </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          9am
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id = "nineam" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          10am
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id = "tenam" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          11am
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id = "elevenam" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          12pm
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id = "twelvepm" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          1pm
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id = "nineam" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          2pm
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id = "nineam" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          3pm
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id = "threepm" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          4pm
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id ="fourpm" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
+      <div class="row p-0 m-0" style="border-top:1px solid black">
+        <div class="col-3 col-lg-2 time-block p-0 m-0" style="border-right: 1px solid black;">
+          5pm
+        </div>
+        <div class="col-6 col-lg-8 time-block p-0">
+          <textarea id ="fivepm" class = "textarea"></textarea>
+        </div>
+        <div class="col-3 col-lg-2 time-block p-0">
+          <button type="button" name="save" id="save" class="btn-primary btn mybtn">Save</button>
+        </div>
+      </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </div>
+    <script src="script.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
