@@ -8,54 +8,100 @@
 */
 var blockText;
 var textEntered;
-var saveBtnClicked
+var saveBtnClicked;
+var hourVal;
+var storeText = [];
+var storeTextObj = [];
 
+// Setting the date at the top of the page with moment.js
 var topDate = moment().format("dddd, MMMM Do YYYY");
 $('#currentDay').text(topDate); 
 var hour = moment().format('HH')
-var min = moment().format('mm')
+
 
 
 colorTimeBlocks()
 
 function colorTimeBlocks() {
-    if (hour == '08'){
-        $('#nineamRow').addClass('present')
-        console.log($('#nineamRow').value)
-    } else if (hour == '10'){
-        $('#tenamRow').addClass('present')
-    } else if (hour == '11'){
-        $('#elevenamRow').addClass('present')
-    } else if (hour == '12'){
-        $('#twelevepmRow').addClass('present')
-    } else if (hour == '13'){
-        $('#onepmRow').addClass('present')
-    } else if (hour == '14'){
-        $('#twopmRow').addClass('present')
-    } else if (hour == '15'){
-        $('#threepmRow').addClass('present')
-    } else if (hour == '16'){
-        $('#fourpmRow').addClass('present')
-    } else if (hour == '17'){
-        $('#fivepmRow').addClass('present')
-    }
+    if (hour == '09'){
+        $('#09Row').addClass('present')
+    } else if (hour < '09') {
+        $('#09Row').addClass('future')
+    } else {$('#09Row').addClass('past') }
+
+    if (hour == '10'){
+        $('#10Row').addClass('present')
+    } else if (hour < '10') {
+        $('#10Row').addClass('future')
+    } else {$('#10Row').addClass('past') }
+
+    if (hour == '11'){
+        $('#11Row').addClass('present')
+    } else if (hour < '11') {
+        $('#11Row').addClass('future')
+    } else {$('#11Row').addClass('past') }
+    
+    if (hour == '12'){
+        $('#12Row').addClass('present')
+    } else if (hour < '12') {
+        $('#12Row').addClass('future')
+    } else {$('#12Row').addClass('past') }
+    
+    if (hour == '13'){
+        $('#13Row').addClass('present')
+    } else if (hour < '13') {
+        $('#13Row').addClass('future')
+    } else {$('#13Row').addClass('past') }
+    
+    if (hour == '14'){
+        $('#14Row').addClass('present')
+    } else if (hour < '14') {
+        $('#14Row').addClass('future')
+    } else {$('#14Row').addClass('past') }
+    
+    if (hour == '15'){
+        $('#15Row').addClass('present')
+    } else if (hour < '15') {
+        $('#15Row').addClass('future')
+    } else {$('#15Row').addClass('past') }
+    
+    if (hour == '16'){
+        $('#16Row').addClass('present')
+    } else if (hour < '16') {
+        $('#16Row').addClass('future')
+    } else {$('#16Row').addClass('past') }
+    
+    if (hour == '17'){
+        $('#17Row').addClass('present')
+    } else if (hour < '17') {
+        $('#17Row').addClass('future')
+    } else {$('#17Row').addClass('past') }
+
+    
 }
 
-
-
-$('textarea').on('keydown',function(){
-    blockText = this.id
-})
-
+function storeTextLocal(){
+    console.log(storeText)
+    localStorage.setItem('storeText', JSON.stringify(storeText));
+}
 $('button').on('click',function(){
-    saveBtnClicked = this.id
-    // textEntered = $('button').attr('id');
-    // textEntered = $('#nineamText').val(); works
-    textEntered = $('#blockText').val();
-    // textEntered = blockText.val();
+    saveBtnClicked = this.id;
+    hourVal = saveBtnClicked.slice(0,2);
     
-    console.log(blockText);
-    console.log(textEntered)
+    textEntered = $('#' + hourVal + 'Text').val();
+    // $('#' + hourVal + 'Text').val('');
+    if (textEntered == ''){
+        // alert('Please enter some text before attempting to save.')
+        return
+    }
     
+    storeTextObj = [
+        {hour: hourVal},
+        {text: textEntered.trim()}
+    ]
+    storeText.push(storeTextObj)
 
+    storeTextLocal()
+    
+    
 })
