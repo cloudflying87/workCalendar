@@ -25,61 +25,14 @@ init()
 //Coloring the rows based on the time of day. Requires a refresh to keep it working
 
 function colorTimeBlocks() {
-    if (hour == '09'){
-        $('#09Row').addClass('present')
-    } else if (hour < '09') {
-        $('#09Row').addClass('future')
-    } else {$('#09Row').addClass('past') }
-
-    if (hour == '10'){
-        $('#10Row').addClass('present')
-    } else if (hour < '10') {
-        $('#10Row').addClass('future')
-    } else {$('#10Row').addClass('past') }
-
-    if (hour == '11'){
-        $('#11Row').addClass('present')
-    } else if (hour < '11') {
-        $('#11Row').addClass('future')
-    } else {$('#11Row').addClass('past') }
-    
-    if (hour == '12'){
-        $('#12Row').addClass('present')
-    } else if (hour < '12') {
-        $('#12Row').addClass('future')
-    } else {$('#12Row').addClass('past') }
-    
-    if (hour == '13'){
-        $('#13Row').addClass('present')
-    } else if (hour < '13') {
-        $('#13Row').addClass('future')
-    } else {$('#13Row').addClass('past') }
-    
-    if (hour == '14'){
-        $('#14Row').addClass('present')
-    } else if (hour < '14') {
-        $('#14Row').addClass('future')
-    } else {$('#14Row').addClass('past') }
-    
-    if (hour == '15'){
-        $('#15Row').addClass('present')
-    } else if (hour < '15') {
-        $('#15Row').addClass('future')
-    } else {$('#15Row').addClass('past') }
-    
-    if (hour == '16'){
-        $('#16Row').addClass('present')
-    } else if (hour < '16') {
-        $('#16Row').addClass('future')
-    } else {$('#16Row').addClass('past') }
-    
-    if (hour == '17'){
-        $('#17Row').addClass('present')
-    } else if (hour < '17') {
-        $('#17Row').addClass('future')
-    } else {$('#17Row').addClass('past') }
-
-    
+    for (let i = 09; i < 18; i++) {
+        if (hour == i){
+            $('#'+ i + 'Row').addClass('present')
+        } else if (hour < i) {
+            $('#'+i+'Row').addClass('future')
+        } else 
+            {$('#'+ i +'Row').addClass('past') }    
+    }
 }
 // Intializing the data from storage
 function init(){
