@@ -127,7 +127,8 @@ $('button').on('click',function(){
                     {hour: hourVal},
                     {text: textEntered.trim()}
                 ]
-                console.log("Small if " + i + "  " + storeText.length)
+            }
+            if (timeRows.indexOf(eachBlock[0].hour) === -1){
                 storeText.push(storeTextObj)
             }
         }
