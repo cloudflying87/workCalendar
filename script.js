@@ -67,8 +67,21 @@ $('button').on('click',function(){
         // alert('Please enter some text before attempting to save.')
         return
     }
-    // If there is something in the local storage I am checking to see if there is data already in that text box. If there is then I will update it. If there is no data than I will just add the new data. This prevents duplicate text boxes.
+    /* If there is something in the local storage I am checking to see if there is data already in that text box. If there is then I will update it. If there is no data than I will just add the new data. This prevents duplicate text boxes.
+
+    */
     if (storeText.length >0){
+        for (let i = 09; i < 18; i++) {
+            storeTextObj = [
+                {hour: i},
+                {text: textEntered.trim()}
+            ]
+        storeText.push(storeTextObj)
+            
+        }
+    }})
+        //hard coding the array since there is a set number of values. 
+        /* This was the original attempt at storing the data. 
         const timeRows = ['9','10','11','12','13','14','15','16','17']
         for (let i = 0; i < storeText.length; i++) {
             eachBlock = storeText[i]
@@ -94,4 +107,5 @@ $('button').on('click',function(){
     
     }
     storeTextLocal()
-})
+   
+    */
